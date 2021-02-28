@@ -1,5 +1,10 @@
 <resources>
-    <string name="app_name">Lab1_2</string>
+    <string name="app_name">Lab2</string>
     <string name="title_home">General</string>
     <string name="title_dashboard">Item 2</string>
+    <string name="lab2">Lab2</string>
+    <string name="back_to_lab1">Back to Lab1</string>
+    <string name="next_to_lab3">Next to Lab3</string>
+    <string name="pie_chart">Pie Chart</string>
+    <string name="function">Function</string>
 </resources>
