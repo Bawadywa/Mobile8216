@@ -1,6 +1,7 @@
 package ua.kpi.comsys.IO8216;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.content.res.Resources;
@@ -32,6 +33,7 @@ public class Lab2Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lab2);
         linear = (LinearLayout) findViewById(R.id.linear);
@@ -120,13 +122,25 @@ public class Lab2Activity extends AppCompatActivity {
         button_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openmainactivity();
+                openMainActivity();
+            }
+        });
+
+        button_next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openLab3Activity();
             }
         });
     }
 
-    public void openmainactivity(){
+    public void openMainActivity(){
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void openLab3Activity() {
+        Intent intent = new Intent(getApplicationContext(), Lab3Activity.class);
         startActivity(intent);
     }
 

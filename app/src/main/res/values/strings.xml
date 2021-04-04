@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Lab2</string>
+    <string name="app_name">Labs</string>
     <string name="title_home">General</string>
     <string name="title_dashboard">Item 2</string>
     <string name="lab2">Lab2</string>
@@ -7,4 +7,9 @@
     <string name="next_to_lab3">Next to Lab3</string>
     <string name="pie_chart">Pie Chart</string>
     <string name="function">Function</string>
+    <string name="back_to_lab2">back to lab2</string>
+    <string name="next_to_lab4">next to lab4</string>
+    <string name="poster">Poster</string>
+    <string name="movies">Movies</string>
+    <string name="title">Title:</string>
 </resources>
