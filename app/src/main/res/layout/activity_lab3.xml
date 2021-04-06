@@ -24,8 +24,8 @@
             android:gravity="center"
             android:orientation="vertical"
             android:padding="10dp"
-            android:paddingStart="5dp"
-            android:paddingEnd="5dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -34,12 +34,12 @@
 
             <TextView
                 android:id="@+id/textView"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:padding="10dp"
-                android:layout_marginBottom="5dp"
                 android:text="@string/movies"
+                android:layout_marginBottom="5dp"
                 android:textColor="#000000"
                 android:textSize="24sp"
                 android:typeface="monospace"
@@ -47,7 +47,8 @@
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.5" />
+                app:layout_constraintVertical_bias="0.5"
+                />
 
         </LinearLayout>
     </ScrollView>

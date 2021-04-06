@@ -97,9 +97,11 @@ public class Lab3Activity extends AppCompatActivity {
 
     public void makeTable(){
         main_layout = findViewById(R.id.main_layout);
+        main_layout.addView(createUnderline(15));
         ArrayList<Movie> movies = createMoviesArr();
         for (int i = 0; i < movies.size() - 1; i++){
-            main_layout.addView(createRow(movies.get(i), 50));
+            main_layout.addView(createRow(movies.get(i), 25));
+            main_layout.addView(createUnderline(25));
         }
         main_layout.addView(createRow(movies.get(movies.size() - 1), 88));
     }
@@ -118,10 +120,12 @@ public class Lab3Activity extends AppCompatActivity {
         image.setLayoutParams(new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1.75f));
         image.setAdjustViewBounds(true);
         image.setMaxHeight(convertDpToPx(300));
+
         InputStream inputStream = null;
 
         if (file_name.equals("")){
-            file_name = "no_image.png";
+            image.setLayoutParams(new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT, 1.75f));
+            return image;
         }
 
         try {
@@ -138,8 +142,10 @@ public class Lab3Activity extends AppCompatActivity {
         LinearLayout layout = new LinearLayout(Lab3Activity.this);
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         layoutParams.setMargins(0, 0, 0, convertDpToPx(margin));
+        layout.setPadding(convertDpToPx(5), 0, convertDpToPx(5), 0);
         layout.setLayoutParams(layoutParams);
         layout.setOrientation(LinearLayout.HORIZONTAL);
+        layout.setGravity(Gravity.CENTER);
         layout.setWeightSum(5);
         return layout;
     }
@@ -148,7 +154,7 @@ public class Lab3Activity extends AppCompatActivity {
     public LinearLayout createContentBox(Movie movie){
         String[] labels = {"Title: ", "Year: ", "ImdbID: ", "Type: "};
         LinearLayout layout = new LinearLayout(Lab3Activity.this);
-        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT, 3.25f);
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 3.25f);
         layout.setLayoutParams(layoutParams);
         layout.setOrientation(LinearLayout.VERTICAL);
         layout.setGravity(Gravity.CENTER);
@@ -161,12 +167,9 @@ public class Lab3Activity extends AppCompatActivity {
         text = createText(labels[0], 2.1f, 0, 18);
         text.setTypeface(Typeface.DEFAULT_BOLD);
         contentRow.addView(text);
-        HorizontalScrollView scroll = createScroll(weightSum - 2.1f);
-        text = createText(movie.getTitle(), 100f, 0, 17);
+        text = createText(movie.getTitle(), weightSum - 2.1f, 0, 17);
         text.setTypeface(Typeface.DEFAULT, Typeface.ITALIC);
-        scroll.addView(text);
-
-        contentRow.addView(scroll);
+        contentRow.addView(text);
         layout.addView(contentRow);
 
         String year;
@@ -208,7 +211,7 @@ public class Lab3Activity extends AppCompatActivity {
 
     public TextView createText(String text, float weight, int padding, int textSize){
         TextView textView = new TextView(Lab3Activity.this);
-        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, weight);
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, weight);
 
         textView.setLayoutParams(layoutParams);
         textView.setPadding(convertDpToPx(padding), 0, 0, 0);
@@ -219,11 +222,13 @@ public class Lab3Activity extends AppCompatActivity {
         return textView;
     }
 
-    public HorizontalScrollView createScroll(float weight){
-        HorizontalScrollView horizontalScrollView = new HorizontalScrollView(Lab3Activity.this);
-        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, weight);
-        horizontalScrollView.setLayoutParams(layoutParams);
-        return horizontalScrollView;
+    public View createUnderline(int margin){
+        View view = new View(Lab3Activity.this);
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, convertDpToPx(1));
+        layoutParams.setMargins(0, 0, 0, convertDpToPx(margin));
+        view.setLayoutParams(layoutParams);
+        view.setBackgroundColor(Color.parseColor("#333333"));
+        return view;
     }
 
     public void setNavButtons(){
