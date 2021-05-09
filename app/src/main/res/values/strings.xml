@@ -1,10 +1,12 @@
 <resources>
     <string name="app_name">Labs</string>
     <string name="title_home">General</string>
-    <string name="title_dashboard">Item 2</string>
+    <string name="title_dashboard">Lab1</string>
+    <string name="title_lab2">Lab2</string>
+    <string name="title_lab3">Lab3</string>
     <string name="lab2">Lab2</string>
     <string name="back_to_lab1">Back to Lab1</string>
-    <string name="next_to_lab3">Next to Lab3</string>
+    <string name="next_to_lab3_4">Next to Lab3–4</string>
     <string name="pie_chart">Pie Chart</string>
     <string name="function">Function</string>
     <string name="back_to_lab2">back to lab2</string>
@@ -12,4 +14,13 @@
     <string name="poster">Poster</string>
     <string name="movies">Movies</string>
     <string name="title">Title:</string>
+    <string name="name_8216" translatable="false">Половінкін Петро\nГрупа ІО-82\nЗК ІО-8216</string>
+    <string name="new_movie">New movie</string>
+    <string name="hint_title">Title</string>
+    <string name="hint_year">Year</string>
+    <string name="hint_type">Type</string>
+    <string name="button_add">Add</string>
+    <string name="hint_search">Search</string>
+    <string name="no_movies_text">No movies found</string>
+    <string name="no_detailed_information">No detailed information</string>
 </resources>

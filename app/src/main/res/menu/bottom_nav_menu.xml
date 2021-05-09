@@ -11,4 +11,14 @@
         android:icon="@drawable/ic_dashboard_black_24dp"
         android:title="@string/title_dashboard" />
 
+    <item
+        android:id="@+id/navigation_lab2"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/title_lab2" />
+
+    <item
+        android:id="@+id/navigation_lab3"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/title_lab3" />
+
 </menu>
