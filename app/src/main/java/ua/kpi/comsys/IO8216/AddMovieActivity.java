@@ -50,10 +50,18 @@ public class AddMovieActivity extends AppCompatActivity {
                     error_message += "Field 'Title' is required";
                 }else{
                     if(!year_str.equals("")){
-                        year = Integer.parseInt(year_str);
-                        if (year > 2021){
+                        if(year_str.contains(".")){
                             check = false;
-                            error_message += "Year is more than 2021";
+                            error_message += "Year must be decimal";
+                        }else if (year_str.startsWith("0")){
+                            check = false;
+                            error_message += "Year mustn't start with zero";
+                        }else{
+                            year = Integer.parseInt(year_str);
+                            if (year > 2021){
+                                check = false;
+                                error_message += "Year is more than 2021";
+                            }
                         }
                     }else{
                         year = 0;
